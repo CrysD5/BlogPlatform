@@ -31,9 +31,9 @@ namespace BlogPlatform
                 );
 
             modelBuilder.Entity<Post>().HasData(
-                new Post() { Id = 1, Author = "Crys", Title = "Reading", Body = "I like it"},
-                new Post() { Id = 2, Author = "Crys", Title = "Music", Body = "Is good" },
-                new Post() { Id = 3, Author = "Crys", Title = "Painting", Body = "I do it" }
+                new Post() { Id = 1, Author = "Crys", Title = "Reading", Body = "I like it", CategoryId = 1, PublishDate = DateTime.Now},
+                new Post() { Id = 2, Author = "Crys", Title = "Music", Body = "Is good", CategoryId = 2, PublishDate = DateTime.Now },
+                new Post() { Id = 3, Author = "Crys", Title = "Painting", Body = "I do it" , CategoryId = 3, PublishDate = DateTime.Now }
                 );
 
             base.OnModelCreating(modelBuilder);

@@ -39,11 +39,12 @@ namespace blog_template_practice
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints (endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",

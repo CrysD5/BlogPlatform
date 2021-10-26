@@ -16,19 +16,19 @@ namespace BlogPlatform.Controllers
         }
         public IActionResult Index()
         {
-            return View(_db.Posts.ToList());
+            return View(_db.Categories.ToList());
         }
 
         public IActionResult Create()
         {
-            ViewBag.Post = _db.Posts.ToList();
+            
             return View();
         }
 
         [HttpPost]
         public IActionResult Create(Category category)
         {            
-            _db.Categories.Add(category);
+           
             _db.SaveChanges();
 
             return RedirectToAction("Index");

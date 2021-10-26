@@ -13,7 +13,7 @@ namespace BlogPlatform.Controllers
 {
     public class PostController : Controller
     {
-        private BlogContext _db;
+        private readonly BlogContext _db;
         public PostController(BlogContext db)
         {
             _db = db;
@@ -21,12 +21,13 @@ namespace BlogPlatform.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_db.Posts.ToList());
         }
 
         public IActionResult Create()
         {
             ViewBag.Categories = _db.Categories.ToList();
+            
             return View();
         }
 
@@ -34,7 +35,7 @@ namespace BlogPlatform.Controllers
         public IActionResult Create(Post post)
         {
             ViewBag.Categories = _db.Categories.ToList();
-
+            post.PublishDate = DateTime.Now;
             _db.Posts.Add(post);
             _db.SaveChanges();
 
@@ -43,6 +44,7 @@ namespace BlogPlatform.Controllers
 
         public IActionResult Edit(int id)
         {
+            ViewBag.Categories = _db.Categories.ToList();
             var post = _db.Posts.Find(id);
             return View(post);
         }
@@ -50,6 +52,7 @@ namespace BlogPlatform.Controllers
         [HttpPost]
         public IActionResult Edit(int id, Post model)
         {
+            ViewBag.Categories = _db.Categories.ToList();
             _db.Update(model);
             _db.SaveChanges();
 
