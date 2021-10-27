@@ -1,71 +1,76 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿html {
+    background-color: #cbc0d3;
 }
 
-/* Provide sufficient contrast against white background */
+div.col-xs-12 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #240046;
+}
+
 a {
-  color: #0366d6;
+    color: #0091ad;
+    text-decoration: none;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+a:after {
+    color: #d4d700;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.pop {
+    color: #a4133c;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+table td,
+#table th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+table tr:nth-child(even) {
+    background-color: #aeb4606e;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+table tr:hover {
+    background-color: #ddd;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 27px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+th {
+    color: #aeb460;
+    background-color: #063d41;
 }
+
+    .nav.links {
+        text-align: justify;
+        min-width: 500px;
+    }
+
+    .nav-links:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+
+    .nav-links li {
+        display: inline-block;
+    }

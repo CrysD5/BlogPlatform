@@ -1,51 +1,62 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ExampleBOBOBOOBOO</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <title>@ViewData["Title"] - Blog </title>
+
+    <link rel="stylesheet" href="~/css/site.css"/>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ExampleBOBOBOOBOO</a>
-                
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Post" asp-action="Index">Post</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
-                        </li>
-                    </ul>
+
+
+    <div class="container">
+        <header>
+            <div class="nav">
+                <div class="col-xs-12">
+                    <div class="nav-btn">
+                        <label for="nav-check">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="nav-links">
+                        <a asp-area="" asp-controller="Post" asp-action="Index">View Posts</a>
+                        <a asp-area="" asp-controller="Category" asp-action="Index">View Categories</a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </header>
+
+        <div class="row main">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-4"></div>
+        </div>
+
+        <div class="row footer">
+            <div class="col-md-6">
+                <footer class="footer">
+                    &copy; 2021 - My Blog - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </footer>
+            </div>
+        </div>
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - ExampleBOBOBOOBOO - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
-
-
-
