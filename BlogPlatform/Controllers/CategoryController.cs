@@ -9,7 +9,7 @@ namespace BlogPlatform.Controllers
 {
     public class CategoryController : Controller
     {
-        private BlogContext _db;
+        private readonly BlogContext _db;
         public CategoryController(BlogContext db)
         {
             _db = db;
